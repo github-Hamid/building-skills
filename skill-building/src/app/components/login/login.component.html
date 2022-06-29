@@ -1,0 +1,7 @@
+<div>
+  <input type="email" [(ngModel)]="email" [placeholder]="'LOGIN.email' | translate"/>
+  <input type="password" [(ngModel)]="password" [placeholder]="'LOGIN.pass' | translate"/>
+  <button (click)="submitForm()">{{'LOGIN.submit' | translate}}</button>
+  <p>{{error}}</p>
+
+</div>

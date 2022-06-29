@@ -1,0 +1,17 @@
+{
+  "LOGIN" : {
+  "email" : "ایمیل",
+  "pass" : "پسوورد",
+  "submit" : "ارسال"
+},
+"PROPERTIES" : {
+  "totalOffering" : "پیشنهاد کامل",
+  "term" : "دوره",
+  "projectcted_annual_ROI" : "بازگشت سالیانه سرمایه",
+  "years" : "سال"
+},
+"HOME" : {
+  "properties" : "املاک",
+  "login" : "ورود"
+}
+}

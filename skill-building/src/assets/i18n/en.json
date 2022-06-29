@@ -1,0 +1,17 @@
+{
+  "LOGIN" : {
+  "email" : "Email",
+  "pass" : "Password",
+  "submit" : "Submit"
+},
+"PROPERTIES" : {
+  "totalOffering" : "Total Offering",
+  "term" : "Term",
+  "projectcted_annual_ROI" : "Projected Annual ROI",
+  "years" : "years"
+},
+"HOME" : {
+  "properties" : "PROPERTIES",
+  "login" : "LOGIN"
+}
+}

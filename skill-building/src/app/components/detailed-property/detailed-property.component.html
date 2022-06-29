@@ -1,0 +1,8 @@
+<div>
+  <img [src]="property.img_src_main"/>
+  <p>{{property.address_area}}</p>
+  <p>{{property.address}}</p>
+  <p><span>{{'PROPERTIES.totalOffering' | translate}}: </span>{{property.total_offering}}</p>
+  <p><span>{{'PROPERTIES.term' | translate}}: </span>{{property.total_term.replace("years", "")}} {{'PROPERTIES.years' | translate}}</p>
+  <p><span>{{'PROPERTIES.projectcted_annual_ROI' | translate}}: </span>{{property.projected_annual_returns_min}}</p>
+</div>

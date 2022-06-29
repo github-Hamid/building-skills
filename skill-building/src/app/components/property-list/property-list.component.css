@@ -1,0 +1,14 @@
+img{
+  width: 150px;
+  height: 150px;
+}
+
+ul{
+  list-style-type: none;
+}
+
+.card{
+  cursor: pointer;
+  background-color: aqua;
+  margin: 10px;
+}
