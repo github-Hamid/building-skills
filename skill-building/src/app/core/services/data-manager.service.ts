@@ -23,7 +23,8 @@ export class DataManagerService {
 
   login(email: string, password : string) : Observable<any>
   {
-    return this.http.post<any>("https://alpha.buyproperly.ca/api/user/v1/login", {email: email, password : password});
+    return this.http.post<any>("https://alpha.buyproperly.ca/api/user/v1/login", {email: email, password : password})
+    .pipe(catchError(this.errorHandler));
   }
 
   errorHandler(error: HttpErrorResponse) {

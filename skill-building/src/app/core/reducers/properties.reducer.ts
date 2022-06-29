@@ -5,6 +5,7 @@ import {getProperty} from "../actions/properties.actions"
 const _propertyReducer = createReducer(
   initialProperty,
   on(getProperty, (state, action)=>{
+
   return {
 ...state
   }

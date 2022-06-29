@@ -126,5 +126,7 @@
       }
     }
   },
-  "defaultProject": "skill-building"
+  "cli": {
+    "analytics": false
+  }
 }
