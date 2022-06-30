@@ -22,7 +22,7 @@ constructor(private dataManager : DataManagerService, public translate : Transla
   title = 'skill-building';
 
   ngOnInit(): void {
-
+  //localStorage.removeItem("token");
   }
 
 

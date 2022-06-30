@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import { user } from '../state/properties.state';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class AuthorizeService {
 
   isLoggedin()
   {
-    return !!localStorage.getItem("token");
+    return !!localStorage.getItem("token") && user.isAuthenticated;
   }
 
 }

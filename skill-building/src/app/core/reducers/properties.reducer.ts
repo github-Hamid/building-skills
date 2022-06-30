@@ -1,18 +1,35 @@
-import { initialProperty } from './../state/properties.state';
+import { detailedProperty, propertyList, user } from './../state/properties.state';
+import { getPropertySuccess, getPropertiesListSuccess, loginSuccess } from './../actions/properties.actions';
 import { createReducer, on } from "@ngrx/store";
-import {getProperty} from "../actions/properties.actions"
+import { state } from '@angular/animations';
 
-const _propertyReducer = createReducer(
-  initialProperty,
-  on(getProperty, (state, action)=>{
 
-  return {
-...state
+export const propertyReducer = createReducer(
+  propertyList,
+  on(getPropertiesListSuccess, (state, action)=>{
+    console.log("state:", state, "action:", action);
+   return {...state, totalCount : action.list.totalCount, data : action.list.data};
+  })
+)
+
+export const detailedPropertyReducer = createReducer(
+  detailedProperty,
+  on(getPropertySuccess, (state, action)=>{
+    console.log("state2: ", state, "action2:", action);
+    return {...state,
+    address_area : action.property.address_area,
+    address : action.property.address,
+    total_offering : action.property.total_offering,
+    total_term : action.property.total_term,
+    projected_annual_returns_min : action.property.projected_annual_returns_min,
+    img_src_main : action.property.img_src_main
   }
   })
 )
 
-export function propertyReducer(state : any, action : any)
-{
-  return _propertyReducer(state, action);
-}
+
+export const loginReducer = createReducer(
+  user, on(loginSuccess, (state, action)=>{
+  return {...state, name : action.name, isAuthenticated : true}
+  })
+)

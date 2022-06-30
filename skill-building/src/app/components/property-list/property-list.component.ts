@@ -1,3 +1,5 @@
+import { PropertyList, propertyList } from './../../core/state/properties.state';
+import { getPropertiesList, getProperty } from './../../core/actions/properties.actions';
 import { DataManagerService } from './../../core/services/data-manager.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -10,31 +12,40 @@ import { Store } from '@ngrx/store';
 })
 export class PropertyListComponent implements OnInit {
 
-properties : Array<any> = [];
-p: number = 1;
-totalCount : number = 0;
-  constructor(private dataManager : DataManagerService, private router : Router, private store : Store<{property : { address_area : string,
-  address : string,
-  total_offering : number,
-  term : number,
-  annual_ROI : number}}>) { }
+  constructor(private dataManager : DataManagerService, private router : Router, private store : Store<{property : {totalCount : number, data : any}}>) { }
+
+  properties : Array<any> = [];
+  p: number = 1;
+  totalCount : number = 0;
 
   ngOnInit(): void {
-    this.dataManager.getPropertyList(10,0)
+    this.store.dispatch(getPropertiesList({limit :10,offset : 0}))
+    // this.dataManager.getPropertyList(10,0)
+    // .subscribe((data)=>{
+    //   console.log("data:", data);
+    //   this.totalCount = data.totalCount;
+    //   this.properties = data.data;
+    // })
+    this.store.select('property')
     .subscribe((data)=>{
-      console.log("data:", data);
-      this.totalCount = data.totalCount;
-      this.properties = data.data;
+      if(data)
+      {
+        this.properties = data.data;
+        this.totalCount = data.totalCount;
+      }
+
     })
   }
 
   pageIsChanged(page : number){
-   this.dataManager.getPropertyList(10,10 * (page - 1))
-   .subscribe((data)=>{
-    console.log("new data:", data, "page: ", page);
-    this.properties = data.data;
-    this.p = page;
-   })
+    this.store.dispatch(getPropertiesList({limit : 10,offset : 10 * (page - 1)}));
+  //  this.dataManager.getPropertyList(10,10 * (page - 1))
+  //  .subscribe((data)=>{
+  //   console.log("new data:", data, "page: ", page);
+  //   this.properties = data.data;
+  //   this.p = page;
+  //  })
+  this.p = page;
 
   }
 
@@ -42,8 +53,10 @@ totalCount : number = 0;
   propertyClicked(property_slurp : string)
   {
     // this.store.dispatch()
+    // this.router.navigate(['/property', property_slurp]);
+    console.log("property_slurp:", property_slurp);
+    this.store.dispatch(getProperty({property_slurp : property_slurp}));
     this.router.navigate(['/property', property_slurp]);
-
   }
 
 }
