@@ -14,6 +14,10 @@ export class PropertiesEffect{
 
   constructor(private dataManager : DataManagerService, private action$ : Actions, private router : Router){}
 
+  loginError(err : HttpErrorResponse)
+  {
+    return errorInLogin();
+  }
 
   loadProperties$ = createEffect(()=>{
    return this.action$.pipe(
@@ -44,16 +48,17 @@ export class PropertiesEffect{
   login$ = createEffect(() => {
     return this.action$.pipe(
       ofType(login),
-       exhaustMap((action) => {
-       return this.dataManager.login(action.email, action.password)
-        .pipe(map((data)=>{
-          this.router.navigateByUrl("properties");
-          return loginSuccess({name : data.data.firstName});
+        exhaustMap((action) => {
+          return this.dataManager.login(action.email, action.password)
+          .pipe(map((data)=>{
+            this.router.navigateByUrl("properties");
+            return loginSuccess({name : data.data.firstName});
+          }),
+          catchError(async (err) => errorInLogin())
+          )
         })
-        )
-      })
-    )
-  })
-}
+         )
+       })
+      }
 
 

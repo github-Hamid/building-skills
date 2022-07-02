@@ -13,7 +13,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import {TranslateModule, TranslateLoader} from "@ngx-translate/core";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
  import { StoreModule } from '@ngrx/store';
-import { propertyReducer, detailedPropertyReducer, loginReducer } from './core/reducers/properties.reducer';
+import { propertyReducer, detailedPropertyReducer, loginReducer, loginErrorReducer } from './core/reducers/properties.reducer';
 import { EffectsModule } from '@ngrx/effects';
 
 export function HttpLoaderFactory(http:HttpClient)
@@ -37,7 +37,7 @@ export function HttpLoaderFactory(http:HttpClient)
     FormsModule,
     NgxPaginationModule,
     EffectsModule.forRoot([PropertiesEffect]),
-   StoreModule.forRoot({property: propertyReducer, detailedProperty : detailedPropertyReducer, login : loginReducer}),
+   StoreModule.forRoot({property: propertyReducer, detailedProperty : detailedPropertyReducer, login : loginReducer, loginError : loginErrorReducer}),
     TranslateModule.forRoot({
       loader : {
         provide : TranslateLoader,

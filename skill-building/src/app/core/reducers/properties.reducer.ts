@@ -1,5 +1,5 @@
 import { detailedProperty, propertyList, user } from './../state/properties.state';
-import { getPropertySuccess, getPropertiesListSuccess, loginSuccess } from './../actions/properties.actions';
+import { getPropertySuccess, getPropertiesListSuccess, loginSuccess, errorInLogin } from './../actions/properties.actions';
 import { createReducer, on } from "@ngrx/store";
 import { state } from '@angular/animations';
 
@@ -31,5 +31,11 @@ export const detailedPropertyReducer = createReducer(
 export const loginReducer = createReducer(
   user, on(loginSuccess, (state, action)=>{
   return {...state, name : action.name, isAuthenticated : true}
+  })
+)
+
+export const loginErrorReducer = createReducer(
+  user, on(errorInLogin, (state, action) => {
+    return {...state, errorMessage : "Username or Password is incorrect"}
   })
 )

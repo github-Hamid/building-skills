@@ -1,3 +1,4 @@
+import { user } from './../../core/state/properties.state';
 import { login } from './../../core/actions/properties.actions';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
@@ -13,13 +14,18 @@ export class LoginComponent implements OnInit {
 email : string = "";
 password : string = "";
 error : string = "";
-  constructor(private dataManager : DataManagerService, private router: Router, private store : Store)
+  constructor(private dataManager : DataManagerService, private router: Router, private store : Store, private userStore : Store<{loginError : {isAuthenticated : boolean,
+    name : string,
+    errorMessage : string}}>)
    {
 
     }
 
   ngOnInit(): void {
-
+this.userStore.select("loginError")
+.subscribe((data) => {
+  this.error = data.errorMessage;
+})
   }
 
   submitForm()

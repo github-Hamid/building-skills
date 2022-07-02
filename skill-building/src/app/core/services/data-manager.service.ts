@@ -26,7 +26,8 @@ export class DataManagerService {
     return this.http.post<any>("https://alpha.buyproperly.ca/api/user/v1/login", {email: email, password : password})
     .pipe(
       tap(res => localStorage.setItem('token', res.jwttoken))
-      ,catchError(this.errorHandler));
+        ,catchError(this.errorHandler)
+      );
   }
 
   errorHandler(error: HttpErrorResponse) {

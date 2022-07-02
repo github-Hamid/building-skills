@@ -10,7 +10,7 @@ export class AuthorizeService {
 
   isLoggedin()
   {
-    return !!localStorage.getItem("token") && user.isAuthenticated;
+    return !!localStorage.getItem("token");
   }
 
 }
