@@ -1,8 +1,10 @@
+<div class="app-container">
 <div>
   <label>Choose your language</label>
   <select #langselect (change)="translate.use(langselect.value)">
     <option *ngFor="let lang of translate.getLangs()" [value]="lang">{{lang}}</option>
   </select>
 </div>
-<router-outlet></router-outlet>
 
+<router-outlet class="conteiner__div-router"></router-outlet>
+</div>
