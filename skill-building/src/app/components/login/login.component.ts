@@ -42,9 +42,10 @@ this.userStore.select("loginError")
 //             this.error = "Password or email is wrong!";
 //   }
 // })
-
+if(this.email.length != 0 && this.password.length != 0)
  this.store.dispatch(login({email : this.email, password : this.password}));
-
+else
+this.error = "Email and Password are required!";
   }
 
 }

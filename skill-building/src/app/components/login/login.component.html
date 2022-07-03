@@ -1,7 +1,8 @@
-<div>
-  <input type="email" [(ngModel)]="email" [placeholder]="'LOGIN.email' | translate"/>
-  <input type="password" [(ngModel)]="password" [placeholder]="'LOGIN.pass' | translate"/>
-  <button (click)="submitForm()">{{'LOGIN.submit' | translate}}</button>
-  <p>{{error}}</p>
-
+<div class="main-div">
+  <div class="login-container">
+  <div><input  type="email" [(ngModel)]="email" [placeholder]="'LOGIN.email' | translate"/></div>
+  <div><input  type="password" [(ngModel)]="password" [placeholder]="'LOGIN.pass' | translate"/></div>
+  <div><button (click)="submitForm()">{{'LOGIN.submit' | translate}}</button></div>
+  <div class="error">{{error}}</div>
+</div>
 </div>
