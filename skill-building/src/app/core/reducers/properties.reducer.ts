@@ -1,7 +1,7 @@
 import { detailedProperty, propertyList, user } from './../state/properties.state';
 import { getPropertySuccess, getPropertiesListSuccess, loginSuccess, errorInLogin } from './../actions/properties.actions';
 import { createReducer, on } from "@ngrx/store";
-import { state } from '@angular/animations';
+
 
 
 export const propertyReducer = createReducer(
@@ -15,7 +15,7 @@ export const propertyReducer = createReducer(
 export const detailedPropertyReducer = createReducer(
   detailedProperty,
   on(getPropertySuccess, (state, action)=>{
-    console.log("state2: ", state, "action2:", action);
+    console.log("state2: ", state, "action2:", action, "images in action:", action.property.images);
     return {...state,
     address_area : action.property.address_area,
     address : action.property.address,

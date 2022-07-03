@@ -1,5 +1,19 @@
 <div *ngIf="property.address.length" class="main">
- <div class="main__div-image"><img [src]="property.img_src_main"/></div>
+ <div class="main__div-image" *ngFor="let image of property.images">
+  <img [src]="image"/>
+  <button
+  class="slider-button button-black button-display-left"
+  (click)="plusDivs(-1)"
+>
+  &#10094;
+</button>
+<button
+  class="slider-button button-black button-display-right"
+  (click)="plusDivs(1)"
+>
+  &#10095;
+</button>
+</div>
 <div class="main__div-content">
   <div class="div-content__div-area">
    <p id="area">{{property.address_area}}</p>
