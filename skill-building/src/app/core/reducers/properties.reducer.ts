@@ -22,7 +22,8 @@ export const detailedPropertyReducer = createReducer(
     total_offering : action.property.total_offering,
     total_term : action.property.total_term,
     projected_annual_returns_min : action.property.projected_annual_returns_min,
-    img_src_main : action.property.img_src_main
+    img_src_main : action.property.img_src_main,
+    images : action.property.images
   }
   })
 )

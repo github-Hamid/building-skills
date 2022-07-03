@@ -17,7 +17,8 @@ property : any = {};
     total_offering : number,
     total_term : number,
     projected_annual_returns_min : number,
-    img_src_main : string}}>) { }
+    img_src_main : string,
+    images : Array<string>}}>) { }
 
   ngOnInit(): void {
     this.store.select("detailedProperty")

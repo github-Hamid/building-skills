@@ -8,7 +8,8 @@ export interface DetailedProperty{
  total_offering : number,
  total_term : number,
  projected_annual_returns_min : number,
- img_src_main : string
+ img_src_main : string,
+ images : Array<string>
 }
 
 export interface PropertyList{
@@ -29,7 +30,8 @@ export const detailedProperty : DetailedProperty = {
  total_offering : 0,
  total_term : 0,
  projected_annual_returns_min : 0,
- img_src_main : ""
+ img_src_main : "",
+ images : []
 }
 
 export const propertyList : PropertyList = {
