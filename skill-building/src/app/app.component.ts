@@ -21,5 +21,7 @@ export class AppComponent {
 
   title = 'skill-building';
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // localStorage.removeItem('token');
+  }
 }

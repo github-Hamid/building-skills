@@ -51,4 +51,10 @@ export class PropertyListComponent implements OnInit {
     this.store.dispatch(getProperty({ property_slurp: property_slurp }));
     this.router.navigate(['/property', property_slurp]);
   }
+
+  //logout button clicking
+  logoutBtnClicked() {
+    this.router.navigateByUrl('/');
+    localStorage.removeItem('token');
+  }
 }

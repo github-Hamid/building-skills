@@ -8,7 +8,8 @@
   "totalOffering" : "Total Offering",
   "term" : "Project Term",
   "projectcted_annual_ROI" : "Annual ROI",
-  "years" : "years"
+  "years" : "years",
+  "logout" : "Logout"
 },
 "HOME" : {
   "properties" : "PROPERTIES",
