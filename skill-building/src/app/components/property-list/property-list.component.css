@@ -32,6 +32,7 @@
 
 .card__div-address p {
   padding-left: 0.5rem;
+  letter-spacing: 1px;
 }
 
 .card__div-address p:nth-child(2) {
