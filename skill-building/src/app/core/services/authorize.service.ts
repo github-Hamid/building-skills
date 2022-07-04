@@ -1,16 +1,12 @@
 import { Injectable } from '@angular/core';
-import { user } from '../state/properties.state';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthorizeService {
+  constructor() {}
 
-  constructor() { }
-
-  isLoggedin()
-  {
-    return !!localStorage.getItem("token");
+  isLoggedin() {
+    return !!localStorage.getItem('token');
   }
-
 }

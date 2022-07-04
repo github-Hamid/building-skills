@@ -1,59 +1,73 @@
 <div *ngIf="property.address.length" class="main">
   <div class="main__div-image">
-    <div class="div-image__main-image"  *ngFor="let image of property.images">
-      <img [src]="image"/>
+    <div class="div-image__main-image" *ngFor="let image of property.images">
+      <img [src]="image" />
       <button
-      class="slider-button button-black button-display-left"
-      (click)="plusDivs(-1)"
-    >
-      &#10094;
-    </button>
-    <button
-      class="slider-button button-black button-display-right"
-      (click)="plusDivs(1)"
-    >
-      &#10095;
-    </button>
- </div>
+        class="slider-button button-black button-display-left"
+        (click)="plusDivs(-1)"
+      >
+        &#10094;
+      </button>
+      <button
+        class="slider-button button-black button-display-right"
+        (click)="plusDivs(1)"
+      >
+        &#10095;
+      </button>
+    </div>
 
- <div class="div-image__sub-images">
-
-  <div class="div-image__sub-image"  *ngFor="let image of property.images;let indexOfelement=index;">
-    <img (click)="subImageClicked(image, indexOfelement)" [src]="image"/>
-  </div>
-  <button
-  class="slider-button button-black button-display-left"
-  (click)="plusSubDivs(-4)"
->
-  &#10094;
-</button>
-<button
-  class="slider-button button-black button-display-right"
-  (click)="plusSubDivs(4)"
->
-  &#10095;
-</button>
-
-</div>
-</div>
-
-
-<div class="main__div-content">
-  <div class="div-content__div-area">
-   <p id="area">{{property.address_area}}</p>
-  <button (click)="backToProperties()" id="area-btn">&#10094; Back to properties</button>
+    <div class="div-image__sub-images">
+      <div
+        class="div-image__sub-image"
+        *ngFor="let image of property.images; let indexOfelement = index"
+      >
+        <img (click)="subImageClicked(image, indexOfelement)" [src]="image" />
+      </div>
+      <button
+        class="slider-button button-black button-display-left"
+        (click)="plusSubDivs(-4)"
+      >
+        &#10094;
+      </button>
+      <button
+        class="slider-button button-black button-display-right"
+        (click)="plusSubDivs(4)"
+      >
+        &#10095;
+      </button>
+    </div>
   </div>
 
-  <p id="address">{{property.address}}</p>
-  <p style="color: black;font-weight: 600;font-size: 1.2rem;">Industrial</p>
-  <div class="div-content__div-info">
-    <p class="box"><span>{{'PROPERTIES.totalOffering' | translate}} </span><span *ngIf="property.total_offering">${{property.total_offering}} </span></p>
-    <p class="box"><span>{{'PROPERTIES.term' | translate}} </span><span *ngIf="property.total_term">{{property.total_term.replace("years", "")}} {{'PROPERTIES.years' | translate}}</span></p>
-    <p class="box"><span>{{'PROPERTIES.projectcted_annual_ROI' | translate}} </span><span *ngIf="property.projected_annual_returns_min">{{property.projected_annual_returns_min}}%</span></p>
+  <div class="main__div-content">
+    <div class="div-content__div-area">
+      <p id="area">{{ property.address_area }}</p>
+      <button (click)="backToProperties()" id="area-btn">
+        &#10094; Back to properties
+      </button>
+    </div>
+
+    <p id="address">{{ property.address }}</p>
+    <p style="color: black; font-weight: 600; font-size: 1.2rem">Industrial</p>
+    <div class="div-content__div-info">
+      <p class="box">
+        <span>{{ "PROPERTIES.totalOffering" | translate }} </span
+        ><span *ngIf="property.total_offering"
+          >${{ property.total_offering }}
+        </span>
+      </p>
+      <p class="box">
+        <span>{{ "PROPERTIES.term" | translate }} </span
+        ><span *ngIf="property.total_term"
+          >{{ property.total_term.replace("years", "") }}
+          {{ "PROPERTIES.years" | translate }}</span
+        >
+      </p>
+      <p class="box">
+        <span>{{ "PROPERTIES.projectcted_annual_ROI" | translate }} </span
+        ><span *ngIf="property.projected_annual_returns_min"
+          >{{ property.projected_annual_returns_min }}%</span
+        >
+      </p>
+    </div>
   </div>
-
 </div>
-</div>
-
-
-

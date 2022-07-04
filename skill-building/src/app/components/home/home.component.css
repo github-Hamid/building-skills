@@ -1,5 +1,5 @@
 .button_slide {
-  color: #FFF;
+  color: #fff;
   border: 2px solid black;
   border-radius: 0px;
   padding: 20px 0 20px 0;
@@ -11,19 +11,18 @@
   box-shadow: inset 0 0 0 0 black;
   transition: ease-out 0.6s;
   background-color: white;
-  color : black;
+  color: black;
   margin: 10px 0 0 10px;
   width: 150px;
   text-align: center;
 }
-
 
 .slide_left:hover {
   box-shadow: inset 0 0 0 50px black;
   color: white;
 }
 
-.body{
+.body {
   width: 100%;
   height: 500px;
   background-image: url(../../../assets/body-img.jpg);
@@ -32,55 +31,49 @@
   background-position: center;
   background-repeat: no-repeat;
   margin-top: 20px;
-
 }
 
-.dots{
+.dots {
   width: 40%;
   height: 60%;
- background-image: radial-gradient(#ff8000 2px, transparent 0);
- background-size: 40px 40px;
+  background-image: radial-gradient(#ff8000 2px, transparent 0);
+  background-size: 40px 40px;
   background-position: -19px -19px;
 }
 
-.body-content{
-position: absolute;
-top: 30%;
-left: 5%;
-width: 50%;
+.body-content {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  width: 50%;
 }
 
-.body-content p:nth-child(1)
-{
+.body-content p:nth-child(1) {
   color: #5461c7;
   font-size: 1.2rem;
   font-weight: 600;
 }
 
-.body-content p:nth-child(2)
-{
+.body-content p:nth-child(2) {
   color: black;
   font-size: 1.5rem;
   font-weight: 700;
 }
 
-.body-content p:nth-child(3)
-{
-font-size: 1.2rem;
+.body-content p:nth-child(3) {
+  font-size: 1.2rem;
 }
 
-.body-button{
+.body-button {
   width: 50%;
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   position: absolute;
   bottom: 5%;
   left: 5%;
-
 }
 
-.body-button button:nth-child(1)
-{
+.body-button button:nth-child(1) {
   background-color: #ff8000;
   border-radius: 5px;
   color: black;
@@ -89,12 +82,9 @@ font-size: 1.2rem;
   border: none;
   width: 150px;
   height: 50px;
-
-
 }
 
-.body-button button:nth-child(2)
-{
+.body-button button:nth-child(2) {
   background-color: #5461c7;
   border-radius: 5px;
   color: white;
@@ -103,6 +93,4 @@ font-size: 1.2rem;
   border: none;
   width: 200px;
   height: 50px;
-
-
 }

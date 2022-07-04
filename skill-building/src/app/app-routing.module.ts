@@ -6,14 +6,22 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 const routes: Routes = [
-  {path: "", component: HomeComponent},
-  {path: "login", component: LoginComponent},
-  {path: "properties", component: PropertyListComponent, canActivate:[AuthGuard]},
-  {path: "property/:property_slurp", component: DetailedPropertyComponent, canActivate:[AuthGuard]}
+  { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'properties',
+    component: PropertyListComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'property/:property_slurp',
+    component: DetailedPropertyComponent,
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

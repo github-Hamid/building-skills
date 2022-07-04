@@ -1,4 +1,4 @@
-.main{
+.main {
   width: 100%;
   height: 100vh;
   margin: 0;
@@ -7,86 +7,75 @@
   flex-wrap: wrap;
 }
 
-/* .main__div-image{
-flex-grow: 1;
-background-color: red;
-
-} */
-
 .button-black,
 .button-hover-black:hover {
   color: #fff !important;
   background-color: #000 !important;
 }
 
-.main__div-content{
-width: 45%;
-margin-left: 5%;
+.main__div-content {
+  width: 45%;
+  margin-left: 5%;
 }
 
-#area{
+#area {
   color: black;
   font-size: 3rem;
   font-weight: 600;
   margin-top: 20px;
 }
 
-#address{
+#address {
   color: darkgrey;
   font-weight: 400;
   margin-top: 15px;
-
 }
 
-#area-btn{
+#area-btn {
   border: none;
   background-color: #f4f4f4;
   font-size: 1.2rem;
   font-weight: 500;
 }
 
-.div-content__div-area{
+.div-content__div-area {
   display: flex;
   justify-content: space-between;
 }
 
-.div-content__div-info{
+.div-content__div-info {
   display: flex;
   justify-content: space-between;
 }
 
-.box{
-background-color: white;
-display: flex;
-flex-direction: column;
-width: 30%;
-align-items: center;
+.box {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  align-items: center;
 }
 
 .box span {
-margin-top: 15px;
-margin-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-.box span:nth-child(1)
-{
+.box span:nth-child(1) {
   color: #5c6be0;
 }
 
-.box span:nth-child(2)
-{
+.box span:nth-child(2) {
   color: black;
   font-size: 1.5rem;
   font-weight: 600;
 }
 
-
 .main__div-image {
   width: 50%;
-
 }
 
-.div-image__main-image{
+.div-image__main-image {
   width: 100%;
   text-align: center;
   display: none;
@@ -96,12 +85,12 @@ margin-bottom: 15px;
   height: 300px;
 }
 
-.div-image__main-image img{
+.div-image__main-image img {
   width: 100%;
   height: 300px;
 }
 
-.div-image__sub-images{
+.div-image__sub-images {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -110,18 +99,16 @@ margin-bottom: 15px;
   margin-top: 20px;
 }
 
-.div-image__sub-image{
+.div-image__sub-image {
   width: 20%;
   height: 80px;
-
 }
 
-.div-image__sub-image img{
+.div-image__sub-image img {
   width: 100%;
   height: 100%;
   cursor: pointer;
 }
-
 
 .button-display-left {
   position: absolute;

@@ -1,15 +1,28 @@
 <div class="header">
-  <button class="button_slide slide_left" (click)="propertiesBtnClicked()">{{'HOME.properties' | translate}}</button>
-  <button class="button_slide slide_left" (click)="loginBtnClicked()">{{'HOME.login' | translate}}</button>
+  <button class="button_slide slide_left" (click)="propertiesBtnClicked()">
+    {{ "HOME.properties" | translate }}
+  </button>
+  <button class="button_slide slide_left" (click)="loginBtnClicked()">
+    {{ "HOME.login" | translate }}
+  </button>
 </div>
 <div class="body">
-  <!-- <img src="../../../assets/body-img.jpg"  alt="image"/> -->
-  <div class="dots">
-  </div>
+  <div class="dots"></div>
   <div class="body-content">
     <p>SMART. SIMPLE. ACCESSIBLE.</p>
-    <p>Real Estate investing<br/> made for you.</p>
-    <p><strong>lets you invest in real estate to grow and diversify your wealth without traditional upfront costs.</strong> Starting at $2500, our AI-powered platform helps you achieve above-human performance earning monthly rental income, as well as capital appreciation.</p>
+    <p>
+      Real Estate investing<br />
+      made for you.
+    </p>
+    <p>
+      <strong
+        >lets you invest in real estate to grow and diversify your wealth
+        without traditional upfront costs.</strong
+      >
+      Starting at $2500, our AI-powered platform helps you achieve above-human
+      performance earning monthly rental income, as well as capital
+      appreciation.
+    </p>
   </div>
   <div class="body-button">
     <button>Get Started</button>
