@@ -14,37 +14,33 @@ export class PropertiesEffect{
 
   constructor(private dataManager : DataManagerService, private action$ : Actions, private router : Router){}
 
-  loginError(err : HttpErrorResponse)
-  {
-    return errorInLogin();
-  }
-
+// effect for getting property list action
   loadProperties$ = createEffect(()=>{
    return this.action$.pipe(
       ofType(getPropertiesList),
        exhaustMap((action) => {
         return this.dataManager.getPropertyList(action.limit, action.offset)
         .pipe(map((data)=>{
-          console.log("data1", data);
           return getPropertiesListSuccess({list : data});
         }))
        })
     )
   })
 
+  // effect for getting property action
   loadProperty$ = createEffect(() => {
     return this.action$.pipe(ofType(getProperty),
     exhaustMap((action) => {
       console.log("action3:", action);
       return this.dataManager.getDetailedProperty(action.property_slurp)
             .pipe(map((data) => {
-              console.log("data2: ", data);
               return getPropertySuccess({property : data});
             }))
     })
     )
   })
 
+  // effect for login action
   login$ = createEffect(() => {
     return this.action$.pipe(
       ofType(login),

@@ -1,7 +1,7 @@
 
 import { DataManagerService } from './core/services/data-manager.service';
 
-import {Data} from "./core/data"
+
 import { Component, OnInit } from '@angular/core';
 import {TranslateService} from "@ngx-translate/core"
 
@@ -22,7 +22,7 @@ constructor(private dataManager : DataManagerService, public translate : Transla
   title = 'skill-building';
 
   ngOnInit(): void {
-  //localStorage.removeItem("token");
+
   }
 
 

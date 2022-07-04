@@ -12,7 +12,7 @@ import { Store } from '@ngrx/store';
 })
 export class PropertyListComponent implements OnInit {
 
-  constructor(private dataManager : DataManagerService, private router : Router, private store : Store<{property : {totalCount : number, data : any}}>) { }
+  constructor(private dataManager : DataManagerService, private router : Router, private store : Store<{property : PropertyList}>) { }
 
   properties : Array<any> = [];
   p: number = 1;
@@ -20,12 +20,7 @@ export class PropertyListComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.dispatch(getPropertiesList({limit :10,offset : 0}))
-    // this.dataManager.getPropertyList(10,0)
-    // .subscribe((data)=>{
-    //   console.log("data:", data);
-    //   this.totalCount = data.totalCount;
-    //   this.properties = data.data;
-    // })
+
     this.store.select('property')
     .subscribe((data)=>{
       if(data)
@@ -37,26 +32,19 @@ export class PropertyListComponent implements OnInit {
     })
   }
 
+  // clicking on pagination numbers
   pageIsChanged(page : number){
     this.store.dispatch(getPropertiesList({limit : 10,offset : 10 * (page - 1)}));
-  //  this.dataManager.getPropertyList(10,10 * (page - 1))
-  //  .subscribe((data)=>{
-  //   console.log("new data:", data, "page: ", page);
-  //   this.properties = data.data;
-  //   this.p = page;
-  //  })
   this.p = page;
-
   }
 
-
+// clicking on property card
   propertyClicked(property_slurp : string)
   {
-    // this.store.dispatch()
-    // this.router.navigate(['/property', property_slurp]);
-    console.log("property_slurp:", property_slurp);
+
     this.store.dispatch(getProperty({property_slurp : property_slurp}));
     this.router.navigate(['/property', property_slurp]);
   }
 
 }
+

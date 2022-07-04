@@ -1,3 +1,4 @@
+import { DetailedProperty } from './../../core/state/properties.state';
 import { Store } from '@ngrx/store';
 import { DataManagerService } from './../../core/services/data-manager.service';
 import { Component, OnInit, AfterViewInit, AfterViewChecked } from '@angular/core';
@@ -14,16 +15,11 @@ property_slurp : string = "";
 property : any = {};
 slideIndex: number = 1;
 subSlideIndex : number = 4;
-  constructor(private route : ActivatedRoute, private dataManager : DataManagerService,private store : Store<{detailedProperty : {address_area : string,
-    address : string,
-    total_offering : number,
-    total_term : number,
-    projected_annual_returns_min : number,
-    img_src_main : string,
-    images : Array<string>}}>,
+
+  constructor(private route : ActivatedRoute, private dataManager : DataManagerService,private store : Store<{detailedProperty : DetailedProperty}>,
     private router : Router) { }
 
-// showing selected slides and hiding rest of them
+// showing selected slide and hiding rest of them for the bigger slider
 showDivs(n: number) {
   var i;
   var images = document.querySelectorAll<HTMLElement>('.div-image__main-image');
@@ -40,11 +36,17 @@ showDivs(n: number) {
   images[this.slideIndex - 1].style.display = 'block';
 }
 
+// showing selected slides and hiding rest of them for the smaller slider
 showDivSubImages(n : number)
 {
   var i;
   var images = document.querySelectorAll<HTMLElement>('.div-image__sub-image');
-  if (n > images.length) {
+
+  if(n - images.length > 0 && n - images.length < 4){
+    this.subSlideIndex = images.length;
+  }
+
+  if (n - images.length === 4) {
     this.subSlideIndex = 4;
   }
   if (n < 1) {
@@ -53,14 +55,15 @@ showDivSubImages(n : number)
   for (i = 0; i < images.length; i++) {
     images[i].style.display = 'none';
   }
-  console.log("images in func:", images);
+
+
   images[this.subSlideIndex - 1].style.display = 'block';
   images[this.subSlideIndex - 2].style.display = 'block';
   images[this.subSlideIndex - 3].style.display = 'block';
   images[this.subSlideIndex - 4].style.display = 'block';
 }
 
-//selecting next slides
+//selecting next slide
 plusDivs(n: number) {
   this.showDivs((this.slideIndex += n));
 }
@@ -76,13 +79,14 @@ ngAfterViewChecked(): void {
   this.showDivSubImages(this.subSlideIndex);
 }
 
+//clicking on image in the smaller slider
 subImageClicked(url : string, index : number)
 {
-  console.log("url:", url, "index:", index);
-  this.slideIndex = index + 1;
+   this.slideIndex = index + 1;
    this.showDivs(1);
 }
 
+//clicking on back to properties button
 backToProperties()
 {
   this.router.navigateByUrl("/properties");
@@ -93,16 +97,8 @@ backToProperties()
     .subscribe((data)=>{
       this.property = data;
         } )
-    //  this.property_slurp = this.route.snapshot.params['property_slurp'];
-    //  this.dataManager.getDetailedProperty(this.property_slurp)
-    //  .subscribe((data)=>{
-    //   this.property = data;
-    //  })
-
-
-
-
-
-  }
+     }
 
 }
+
+

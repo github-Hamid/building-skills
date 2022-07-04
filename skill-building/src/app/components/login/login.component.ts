@@ -1,4 +1,4 @@
-import { user } from './../../core/state/properties.state';
+import { user, User } from './../../core/state/properties.state';
 import { login } from './../../core/actions/properties.actions';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
@@ -14,9 +14,7 @@ export class LoginComponent implements OnInit {
 email : string = "";
 password : string = "";
 error : string = "";
-  constructor(private dataManager : DataManagerService, private router: Router, private store : Store, private userStore : Store<{loginError : {isAuthenticated : boolean,
-    name : string,
-    errorMessage : string}}>)
+  constructor(private dataManager : DataManagerService, private router: Router, private store : Store, private userStore : Store<{loginError : User}>)
    {
 
     }
@@ -30,18 +28,6 @@ this.userStore.select("loginError")
 
   submitForm()
   {
-//      this.dataManager.login(this.email, this.password)
-
-// .subscribe({
-//   next : (data)=>{
-//         console.log("login:", data);
-//          localStorage.setItem("token", data.jwttoken);
-//         this.router.navigateByUrl("properties")
-//   },
-//   error : (err)=>{
-//             this.error = "Password or email is wrong!";
-//   }
-// })
 if(this.email.length != 0 && this.password.length != 0)
  this.store.dispatch(login({email : this.email, password : this.password}));
 else
@@ -49,3 +35,5 @@ this.error = "Email and Password are required!";
   }
 
 }
+
+

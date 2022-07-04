@@ -3,19 +3,18 @@ import { getPropertySuccess, getPropertiesListSuccess, loginSuccess, errorInLogi
 import { createReducer, on } from "@ngrx/store";
 
 
-
+// reducer on property list action when is successful
 export const propertyReducer = createReducer(
   propertyList,
   on(getPropertiesListSuccess, (state, action)=>{
-    console.log("state:", state, "action:", action);
    return {...state, totalCount : action.list.totalCount, data : action.list.data};
   })
 )
 
+// reducer on get property action when is successful
 export const detailedPropertyReducer = createReducer(
   detailedProperty,
   on(getPropertySuccess, (state, action)=>{
-    console.log("state2: ", state, "action2:", action, "images in action:", action.property.images);
     return {...state,
     address_area : action.property.address_area,
     address : action.property.address,
@@ -28,13 +27,14 @@ export const detailedPropertyReducer = createReducer(
   })
 )
 
-
+// reducer on login action when is successful
 export const loginReducer = createReducer(
   user, on(loginSuccess, (state, action)=>{
   return {...state, name : action.name, isAuthenticated : true}
   })
 )
 
+// reducer on login action when is unsuccessful
 export const loginErrorReducer = createReducer(
   user, on(errorInLogin, (state, action) => {
     return {...state, errorMessage : "Username or Password is incorrect"}
