@@ -135,3 +135,66 @@
   justify-content: flex-end;
   margin-bottom: 1rem;
 }
+
+@media only screen and (max-width: 870px) and (min-width: 700px) {
+  .card {
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 701px) and (min-width: 540px) {
+  .card {
+    width: 60%;
+    margin-top: 2rem;
+  }
+
+  .container {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 539px) and (min-width: 480px) {
+  .card {
+    width: 80%;
+    margin-top: 2rem;
+  }
+
+  .container {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 479px) and (min-width: 375px) {
+  .card {
+    width: 90%;
+    margin-top: 2rem;
+  }
+
+  .container {
+    justify-content: center;
+  }
+
+  .button_slide {
+    padding: 1rem 0 1rem 0;
+    width: 6rem;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 374px) {
+  .card {
+    width: 95%;
+    margin-top: 2rem;
+    height: 34rem;
+  }
+
+  .container {
+    justify-content: center;
+  }
+
+  .button_slide {
+    padding: 1rem 0 1rem 0;
+    width: 5rem;
+    text-align: center;
+  }
+}

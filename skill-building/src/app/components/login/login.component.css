@@ -77,3 +77,63 @@ button:hover {
     background-position: 0% 50%;
   }
 }
+
+@media only screen and (max-width: 770px) and (min-width: 601px) {
+  .login-container {
+    width: 60%;
+  }
+
+  button:hover {
+    height: 2.5rem;
+    width: 20%;
+  }
+
+  button {
+    width: 20%;
+  }
+}
+
+@media only screen and (max-width: 600px) and (min-width: 481px) {
+  .login-container {
+    width: 70%;
+  }
+
+  button:hover {
+    height: 2.5rem;
+    width: 25%;
+  }
+
+  button {
+    width: 25%;
+  }
+}
+
+@media only screen and (max-width: 600px) and (min-width: 480px) {
+  .login-container {
+    width: 70%;
+  }
+
+  button:hover {
+    height: 2.5rem;
+    width: 25%;
+  }
+
+  button {
+    width: 25%;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .login-container {
+    width: 90%;
+  }
+
+  button:hover {
+    height: 2.5rem;
+    width: 40%;
+  }
+
+  button {
+    width: 40%;
+  }
+}
