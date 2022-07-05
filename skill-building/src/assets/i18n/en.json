@@ -14,5 +14,7 @@
 "HOME" : {
   "properties" : "PROPERTIES",
   "login" : "LOGIN"
+}, "DETAILED" : {
+  "back" : "Back to properties"
 }
 }

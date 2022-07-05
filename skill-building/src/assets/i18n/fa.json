@@ -14,5 +14,7 @@
 "HOME" : {
   "properties" : "املاک",
   "login" : "ورود"
+}, "DETAILED" : {
+  "back" : "بازگشت به لیست"
 }
 }

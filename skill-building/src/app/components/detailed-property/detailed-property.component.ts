@@ -43,7 +43,7 @@ export class DetailedPropertyComponent implements OnInit {
       images[i].style.display = 'none';
     }
     console.log('images in func:', images);
-    images[this.slideIndex - 1].style.display = 'block';
+    if (images.length) images[this.slideIndex - 1].style.display = 'block';
   }
 
   // showing selected slides and hiding rest of them for the smaller slider
@@ -66,11 +66,12 @@ export class DetailedPropertyComponent implements OnInit {
     for (i = 0; i < images.length; i++) {
       images[i].style.display = 'none';
     }
-
-    images[this.subSlideIndex - 1].style.display = 'block';
-    images[this.subSlideIndex - 2].style.display = 'block';
-    images[this.subSlideIndex - 3].style.display = 'block';
-    images[this.subSlideIndex - 4].style.display = 'block';
+    if (images.length) {
+      images[this.subSlideIndex - 1].style.display = 'block';
+      images[this.subSlideIndex - 2].style.display = 'block';
+      images[this.subSlideIndex - 3].style.display = 'block';
+      images[this.subSlideIndex - 4].style.display = 'block';
+    }
   }
 
   //selecting next slide

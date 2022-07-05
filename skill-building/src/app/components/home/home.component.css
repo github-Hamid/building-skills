@@ -31,6 +31,7 @@
   background-position: center;
   background-repeat: no-repeat;
   margin-top: 1.25rem;
+  overflow-x: hidden;
 }
 
 .dots {
@@ -93,4 +94,88 @@
   border: none;
   width: 12.5rem;
   height: 3rem;
+}
+
+@media only screen and (max-width: 799px) and (min-width: 600px) {
+  .body-content {
+    top: 20%;
+    left: 5%;
+    width: 80%;
+  }
+
+  .body-button {
+    width: 65%;
+  }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 800px) {
+  .body-content {
+    top: 20%;
+    left: 5%;
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 599px) and (min-width: 500px) {
+  .body-content {
+    top: 10%;
+    left: 5%;
+    width: 90%;
+  }
+
+  .body-button {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 499px) and (min-width: 400px) {
+  .body {
+    overflow: hidden;
+    background-position: right;
+  }
+
+  .body-content {
+    top: 10%;
+    left: 5%;
+    width: 95%;
+  }
+
+  .body-button {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 399px) and (min-width: 300px) {
+  .body {
+    background-position: right;
+  }
+
+  .body-content {
+    top: 10%;
+    left: 5%;
+    width: 95%;
+  }
+
+  .body-button {
+    left: 0;
+    width: 100%;
+  }
+
+  .button_slide {
+    padding: 0.8rem 0 0.8rem 0;
+    font-size: 1rem;
+  }
+
+  .body-button button:nth-child(1) {
+    font-size: 0.8rem;
+    font-weight: 500;
+    width: 7rem;
+    height: 3rem;
+  }
+
+  .body-button button:nth-child(2) {
+    font-size: 0.8rem;
+    font-weight: 500;
+    width: 9rem;
+  }
 }

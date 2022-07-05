@@ -46,6 +46,7 @@
 .div-content__div-info {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .box {
@@ -131,4 +132,60 @@
 .slider-button:hover {
   color: #000 !important;
   background-color: #ccc !important;
+}
+
+@media only screen and (max-width: 950px) and (min-width: 500px) {
+  .main {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: wrap;
+  }
+  .main__div-content {
+    width: 100%;
+    margin: 1rem 0 0 0;
+  }
+  .main__div-image {
+    width: 100%;
+  }
+
+  #area {
+    font-size: 2rem;
+  }
+
+  #area-btn {
+    font-size: 0.9rem;
+  }
+
+  .div-image__sub-images {
+    margin: 1.25rem 0 0 0;
+  }
+}
+
+@media only screen and (max-width: 499px) {
+  .main {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: wrap;
+  }
+  .main__div-content {
+    width: 100%;
+    margin: 1rem 0 0 0;
+  }
+  .main__div-image {
+    width: 90%;
+  }
+
+  #area {
+    font-size: 2rem;
+  }
+
+  .div-image__sub-images {
+    margin: 1.25rem 0 0 0;
+  }
 }
