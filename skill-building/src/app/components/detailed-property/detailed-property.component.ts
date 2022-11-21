@@ -1,4 +1,8 @@
-import { DetailedProperty } from './../../core/state/properties.state';
+import {
+  DetailedProperty,
+  PropertyList,
+  propertyList,
+} from './../../core/state/properties.state';
 import { Store } from '@ngrx/store';
 import { DataManagerService } from './../../core/services/data-manager.service';
 import {
@@ -19,11 +23,12 @@ export class DetailedPropertyComponent implements OnInit {
   property: any = {};
   slideIndex: number = 1;
   subSlideIndex: number = 4;
-
+  list2: any = [];
   constructor(
     private route: ActivatedRoute,
     private dataManager: DataManagerService,
     private store: Store<{ detailedProperty: DetailedProperty }>,
+    private list: Store<{ property: PropertyList }>,
     private router: Router
   ) {}
 
@@ -101,8 +106,14 @@ export class DetailedPropertyComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log('p:', propertyList);
     this.store.select('detailedProperty').subscribe((data) => {
       this.property = data;
+    });
+
+    this.list.select('property').subscribe((list) => {
+      this.list2 = list;
+      console.log('list:', this.list2);
     });
   }
 }

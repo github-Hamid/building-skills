@@ -39,7 +39,11 @@
         <p>
           <span>{{ "PROPERTIES.term" | translate }} </span
           ><span *ngIf="property.total_term"
-            >{{ property.total_term.replace("years", "") }}
+            >{{
+              property.total_term.slice(" ")[0] === "1"
+                ? property.total_term.replace("year", "")
+                : property.total_term.replace("years", "")
+            }}
             {{ "PROPERTIES.years" | translate }}</span
           >
         </p>

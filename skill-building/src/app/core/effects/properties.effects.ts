@@ -58,15 +58,20 @@ export class PropertiesEffect {
   login$ = createEffect(() => {
     return this.action$.pipe(
       ofType(login),
-      exhaustMap((action) => {
-        return this.dataManager.login(action.email, action.password).pipe(
-          map((data) => {
-            this.router.navigateByUrl('properties');
-            return loginSuccess({ name: data.data.firstName });
-          }),
-          catchError(async (err) => errorInLogin())
-        );
-      })
+      // exhaustMap((action) => {
+      //   return this.dataManager.login(action.email, action.password).pipe(
+      //     map((data) => {
+      //       this.router.navigateByUrl('properties');
+      //       return loginSuccess({ name: data.data.firstName });
+      //     }),
+      //     catchError(async (err) => errorInLogin())
+      //   );
+      // })
+      map((action) => {
+        this.router.navigateByUrl('properties');
+        return loginSuccess({ name: action.email });
+      }),
+      catchError(async (err) => errorInLogin())
     );
   });
 }

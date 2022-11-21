@@ -45,6 +45,7 @@ export const detailedPropertyReducer = createReducer(
 export const loginReducer = createReducer(
   user,
   on(loginSuccess, (state, action) => {
+    localStorage.setItem('token', 'Hamid');
     return { ...state, name: action.name, isAuthenticated: true };
   })
 );
