@@ -44,7 +44,11 @@
                 ? property.total_term.replace("year", "")
                 : property.total_term.replace("years", "")
             }}
-            {{ "PROPERTIES.years" | translate }}</span
+            {{
+              property.total_term.slice(" ")[0] !== "1"
+                ? ("PROPERTIES.years" | translate)
+                : ("PROPERTIES.year" | translate)
+            }}</span
           >
         </p>
         <p>
