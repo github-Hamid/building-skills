@@ -1,20 +1,22 @@
 {
-  "LOGIN" : {
-  "email" : "ایمیل",
-  "pass" : "پسوورد",
-  "submit" : "ارسال"
-},
-"PROPERTIES" : {
-  "totalOffering" : "پیشنهاد کامل",
-  "term" : "دوره",
-  "projectcted_annual_ROI" : "بازگشت سرمایه",
-  "years" : "سال",
-  "logout" : "خروج"
-},
-"HOME" : {
-  "properties" : "املاک",
-  "login" : "ورود"
-}, "DETAILED" : {
-  "back" : "بازگشت به لیست"
-}
+  "LOGIN": {
+    "email": "ایمیل",
+    "pass": "پسوورد",
+    "submit": "ارسال"
+  },
+  "PROPERTIES": {
+    "totalOffering": "پیشنهاد کامل",
+    "term": "دوره",
+    "projectcted_annual_ROI": "بازگشت سرمایه",
+    "years": "سال",
+    "year": "سال",
+    "logout": "خروج"
+  },
+  "HOME": {
+    "properties": "املاک",
+    "login": "ورود"
+  },
+  "DETAILED": {
+    "back": "بازگشت به لیست"
+  }
 }
